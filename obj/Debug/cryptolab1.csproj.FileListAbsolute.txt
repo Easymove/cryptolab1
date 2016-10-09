@@ -1,0 +1,9 @@
+E:\VisualStudio13\cryptolab1\cryptolab1\bin\Debug\cryptolab1.exe.config
+E:\VisualStudio13\cryptolab1\cryptolab1\bin\Debug\cryptolab1.exe
+E:\VisualStudio13\cryptolab1\cryptolab1\bin\Debug\cryptolab1.pdb
+E:\VisualStudio13\cryptolab1\cryptolab1\obj\Debug\cryptolab1.csprojResolveAssemblyReference.cache
+E:\VisualStudio13\cryptolab1\cryptolab1\obj\Debug\cryptolab1.MainForm.resources
+E:\VisualStudio13\cryptolab1\cryptolab1\obj\Debug\cryptolab1.Properties.Resources.resources
+E:\VisualStudio13\cryptolab1\cryptolab1\obj\Debug\cryptolab1.csproj.GenerateResource.Cache
+E:\VisualStudio13\cryptolab1\cryptolab1\obj\Debug\cryptolab1.exe
+E:\VisualStudio13\cryptolab1\cryptolab1\obj\Debug\cryptolab1.pdb
