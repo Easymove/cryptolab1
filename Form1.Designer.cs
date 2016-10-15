@@ -46,6 +46,7 @@
             this.randomMode = new System.Windows.Forms.BindingSource(this.components);
             this.computeButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
+            this.genButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.probabilityTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableNames)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableData)).BeginInit();
@@ -133,7 +134,7 @@
             this.mCountBox.Size = new System.Drawing.Size(44, 20);
             this.mCountBox.TabIndex = 10;
             this.mCountBox.Value = new decimal(new int[] {
-            4,
+            6,
             0,
             0,
             0});
@@ -145,7 +146,7 @@
             this.kCountBox.Size = new System.Drawing.Size(44, 20);
             this.kCountBox.TabIndex = 11;
             this.kCountBox.Value = new decimal(new int[] {
-            4,
+            6,
             0,
             0,
             0});
@@ -157,7 +158,7 @@
             this.eCountBox.Size = new System.Drawing.Size(44, 20);
             this.eCountBox.TabIndex = 12;
             this.eCountBox.Value = new decimal(new int[] {
-            4,
+            6,
             0,
             0,
             0});
@@ -184,7 +185,7 @@
             // computeButton
             // 
             this.computeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.computeButton.Location = new System.Drawing.Point(760, 107);
+            this.computeButton.Location = new System.Drawing.Point(760, 156);
             this.computeButton.Name = "computeButton";
             this.computeButton.Size = new System.Drawing.Size(112, 43);
             this.computeButton.TabIndex = 15;
@@ -195,7 +196,7 @@
             // saveButton
             // 
             this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.saveButton.Location = new System.Drawing.Point(760, 156);
+            this.saveButton.Location = new System.Drawing.Point(760, 306);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(112, 43);
             this.saveButton.TabIndex = 16;
@@ -203,11 +204,23 @@
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
+            // genButton
+            // 
+            this.genButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.genButton.Location = new System.Drawing.Point(760, 107);
+            this.genButton.Name = "genButton";
+            this.genButton.Size = new System.Drawing.Size(112, 43);
+            this.genButton.TabIndex = 17;
+            this.genButton.Text = "generate";
+            this.genButton.UseVisualStyleBackColor = true;
+            this.genButton.Click += new System.EventHandler(this.genButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 361);
+            this.Controls.Add(this.genButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.computeButton);
             this.Controls.Add(this.randomDropdown);
@@ -257,6 +270,7 @@
         private System.Windows.Forms.BindingSource randomMode;
         private System.Windows.Forms.Button computeButton;
         private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Button genButton;
     }
 }
 

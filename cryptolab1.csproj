@@ -45,16 +45,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="components\TableData.cs" />
-    <Compile Include="components\Cryptogram.cs" />
-    <Compile Include="components\Key.cs" />
-    <Compile Include="components\ProbabilityItem.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="components\Massege.cs" />
     <Compile Include="NameGenerator.cs" />
     <Compile Include="ProbabilityGenerator.cs" />
     <Compile Include="Program.cs" />

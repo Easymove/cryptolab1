@@ -6,8 +6,9 @@ namespace cryptolab1
 {
     public class ProbabilityGenerator
     {
-        private Random _random = new Random();
-        public List<Double> GenerateProbabilities(int len, int type)
+        private readonly Random _random = new Random();
+
+        public List<double> GenerateProbabilities(int len, int type)
         {
             switch (type)
             {
@@ -18,18 +19,18 @@ namespace cryptolab1
                 default:
                     throw new Exception("Not valid probability generator mode!");
             }
-        } 
-
-        public List<Double> GenerateRandomProbabilities(int len)
-        {
-            var tmp = new List<int>(new int[len]).Select(x => _random.Next(1, 100)).ToList();
-            int total = tmp.Sum();
-            return tmp.Select(x => (double)x / total).ToList();
         }
 
-        public List<Double> GenerateEqualProbabilities(int len)
+        public List<double> GenerateRandomProbabilities(int len)
         {
-            return new List<double>(new Double[len]).Select(x => 1.0/len).ToList();
+            var tmp = new List<int>(new int[len]).Select(x => _random.Next(10, 100)).ToList();
+            var total = tmp.Sum();
+            return tmp.Select(x => (double) x/total).ToList();
+        }
+
+        public List<double> GenerateEqualProbabilities(int len)
+        {
+            return new List<double>(new double[len]).Select(x => 1.0/len).ToList();
         }
     }
 }
