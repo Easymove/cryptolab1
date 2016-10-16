@@ -101,7 +101,7 @@ namespace cryptolab1
                 var PE = GetPE(_encodingTab, _messageTab, _keysTab, _cryptograms, i);
                 for (var j = 0; j < _messageTab.table[0].Length; j++)
                 {
-                    row.Add(_messageTab.table[0][j]*PmE[j]/PE);
+                    row.Add(Math.Round(_messageTab.table[0][j]*PmE[j]/PE, 3));
                 }
                 rows.Add(row);
             }
@@ -136,6 +136,77 @@ namespace cryptolab1
                     if (_encodingTab.table[i][j] == _cryptograms[eInd])
                     {
                         res += _keysTab.table[0][i]*_messageTab.table[0][j];
+                    }
+                }
+            }
+            return res;
+        }
+
+        internal List<List<double>> GenerateMessageDiffTable(TableData<double> _messageAfterTab,
+            TableData<double> _messageTab, string[] _cryptograms)
+        {
+            {
+                var rows = new List<List<double>>();
+                for (var i = 0; i < _cryptograms.Length; i++)
+                {
+                    var row = new List<double>();
+                    for (var j = 0; j < _messageTab.table[0].Length; j++)
+                    {
+                        row.Add(Math.Round(_messageAfterTab.table[i][j] - _messageTab.table[0][j], 3));
+                    }
+                    rows.Add(row);
+                }
+                return rows;
+            }
+        }
+
+        internal List<List<double>> GenerateAposteriorKeysToMessageTable(TableData<string> _encodingTab,
+            TableData<double> _messageTab, TableData<double> _keysTab, string[] _cryptograms)
+        {
+            {
+                var rows = new List<List<double>>();
+                for (var i = 0; i < _keysTab.table[0].Length; i++)
+                {
+                    var row = new List<double>();
+                    for (var j = 0; j < _cryptograms.Length; j++)
+                    {
+                        var PkE = GetPkE(_encodingTab, _messageTab, _keysTab, _cryptograms, j);
+                        var PE = GetPE(_encodingTab, _messageTab, _keysTab, _cryptograms, j);
+
+                        row.Add(
+                            Math.Round(
+                                _keysTab.table[0][i]*PkE[i]/
+                                (PE*_messageTab.table[0][GetMessage(_encodingTab, i, _cryptograms[j])]), 3));
+                    }
+                    rows.Add(row);
+                }
+                return rows;
+            }
+        }
+
+        private int GetMessage(TableData<string> _encodingTab, int kInd, string cryptogram)
+        {
+            for (var i = 0; i < _encodingTab.table[kInd].Length; i++)
+            {
+                if (_encodingTab.table[kInd][i] == cryptogram)
+                {
+                    return i;
+                }
+            }
+            return 0;
+        }
+
+        private double[] GetPkE(TableData<string> _encodingTab, TableData<double> _messageTab,
+            TableData<double> _keysTab, string[] _cryptograms, int eInd)
+        {
+            var res = new double[_keysTab.table[0].Length];
+            for (var i = 0; i < _encodingTab.table.Length; i++)
+            {
+                for (var j = 0; j < _encodingTab.table[i].Length; j++)
+                {
+                    if (_encodingTab.table[i][j] == _cryptograms[eInd])
+                    {
+                        res[i] += _messageTab.table[0][j];
                     }
                 }
             }

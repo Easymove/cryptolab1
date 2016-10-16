@@ -7,7 +7,9 @@ namespace cryptolab1
 {
     public partial class MainForm : Form
     {
-        private readonly List<string> _randomMode = new List<string> {"random", "equal"};
+        private readonly NameGenerator _nameGen = new NameGenerator();
+        private readonly ProbabilityGenerator _probGen = new ProbabilityGenerator();
+        private readonly List<string> _randomMode = new List<string> {"equal", "random"};
 
         private readonly List<string> _tables = new List<string>
         {
@@ -19,6 +21,8 @@ namespace cryptolab1
             "keys aposterior div message aprior"
         };
 
+        private readonly TableUtils _tableUtil;
+
         private List<string> _cryptograms;
         private TableData<string> _encodingTab;
         private TableData<double> _keyAfterMassageTab;
@@ -29,10 +33,6 @@ namespace cryptolab1
 
         private List<string> _messages;
         private TableData<double> _messageTab;
-
-        private readonly NameGenerator _nameGen = new NameGenerator();
-        private readonly ProbabilityGenerator _probGen = new ProbabilityGenerator();
-        private readonly TableUtils _tableUtil;
 
         public MainForm()
         {
@@ -85,6 +85,13 @@ namespace cryptolab1
             }
             _messageAfterTab = new TableData<double>(_cryptograms, _messages,
                 _tableUtil.GenerateAposteriorMessageTable(_encodingTab, _messageTab, _keysTab, _cryptograms.ToArray()));
+
+            _messageDiffTab = new TableData<double>(_cryptograms, _messages,
+                _tableUtil.GenerateMessageDiffTable(_messageAfterTab, _messageTab, _cryptograms.ToArray()));
+
+            _keyAfterMassageTab = new TableData<double>(_keys, _cryptograms,
+                _tableUtil.GenerateAposteriorKeysToMessageTable(_encodingTab, _messageTab, _keysTab,
+                    _cryptograms.ToArray()));
         }
 
         private void computeButton_Click(object sender, EventArgs e)
