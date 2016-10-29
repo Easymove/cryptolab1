@@ -1,11 +1,14 @@
-﻿namespace cryptolab1
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace cryptolab1
 {
     partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -63,7 +66,7 @@
             this.probabilityTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.probabilityTable.Location = new System.Drawing.Point(17, 58);
             this.probabilityTable.Name = "probabilityTable";
-            this.probabilityTable.Size = new System.Drawing.Size(737, 291);
+            this.probabilityTable.Size = new System.Drawing.Size(737, 417);
             this.probabilityTable.TabIndex = 0;
             // 
             // choiseLabel
@@ -83,7 +86,7 @@
             this.tableDropdown.FormattingEnabled = true;
             this.tableDropdown.Location = new System.Drawing.Point(90, 12);
             this.tableDropdown.Name = "tableDropdown";
-            this.tableDropdown.Size = new System.Drawing.Size(141, 24);
+            this.tableDropdown.Size = new System.Drawing.Size(249, 24);
             this.tableDropdown.TabIndex = 2;
             // 
             // renderButton
@@ -101,7 +104,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(354, 10);
+            this.label1.Location = new System.Drawing.Point(464, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 25);
             this.label1.TabIndex = 4;
@@ -111,7 +114,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(459, 10);
+            this.label2.Location = new System.Drawing.Point(569, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 25);
             this.label2.TabIndex = 6;
@@ -121,7 +124,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(552, 10);
+            this.label3.Location = new System.Drawing.Point(662, 11);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 25);
             this.label3.TabIndex = 8;
@@ -129,7 +132,7 @@
             // 
             // mCountBox
             // 
-            this.mCountBox.Location = new System.Drawing.Point(406, 15);
+            this.mCountBox.Location = new System.Drawing.Point(516, 16);
             this.mCountBox.Name = "mCountBox";
             this.mCountBox.Size = new System.Drawing.Size(44, 20);
             this.mCountBox.TabIndex = 10;
@@ -141,7 +144,7 @@
             // 
             // kCountBox
             // 
-            this.kCountBox.Location = new System.Drawing.Point(502, 15);
+            this.kCountBox.Location = new System.Drawing.Point(612, 16);
             this.kCountBox.Name = "kCountBox";
             this.kCountBox.Size = new System.Drawing.Size(44, 20);
             this.kCountBox.TabIndex = 11;
@@ -153,7 +156,7 @@
             // 
             // eCountBox
             // 
-            this.eCountBox.Location = new System.Drawing.Point(600, 15);
+            this.eCountBox.Location = new System.Drawing.Point(710, 16);
             this.eCountBox.Name = "eCountBox";
             this.eCountBox.Size = new System.Drawing.Size(44, 20);
             this.eCountBox.TabIndex = 12;
@@ -167,7 +170,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(235, 10);
+            this.label4.Location = new System.Drawing.Point(345, 11);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 25);
             this.label4.TabIndex = 13;
@@ -177,7 +180,7 @@
             // 
             this.randomDropdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.randomDropdown.FormattingEnabled = true;
-            this.randomDropdown.Location = new System.Drawing.Point(264, 12);
+            this.randomDropdown.Location = new System.Drawing.Point(374, 13);
             this.randomDropdown.Name = "randomDropdown";
             this.randomDropdown.Size = new System.Drawing.Size(75, 24);
             this.randomDropdown.TabIndex = 14;
@@ -196,7 +199,7 @@
             // saveButton
             // 
             this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.saveButton.Location = new System.Drawing.Point(760, 306);
+            this.saveButton.Location = new System.Drawing.Point(760, 276);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(112, 43);
             this.saveButton.TabIndex = 16;
@@ -219,7 +222,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 361);
+            this.ClientSize = new System.Drawing.Size(879, 485);
             this.Controls.Add(this.genButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.computeButton);
@@ -236,6 +239,8 @@
             this.Controls.Add(this.choiseLabel);
             this.Controls.Add(this.probabilityTable);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(895, 524);
+            this.MinimumSize = new System.Drawing.Size(895, 524);
             this.Name = "MainForm";
             this.ShowIcon = false;
             this.Text = "cryptolab";
@@ -253,24 +258,24 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView probabilityTable;
-        private System.Windows.Forms.Label choiseLabel;
-        private System.Windows.Forms.ComboBox tableDropdown;
-        private System.Windows.Forms.BindingSource tableData;
-        private System.Windows.Forms.BindingSource tableNames;
-        private System.Windows.Forms.Button renderButton;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown mCountBox;
-        private System.Windows.Forms.NumericUpDown kCountBox;
-        private System.Windows.Forms.NumericUpDown eCountBox;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox randomDropdown;
-        private System.Windows.Forms.BindingSource randomMode;
-        private System.Windows.Forms.Button computeButton;
-        private System.Windows.Forms.Button saveButton;
-        private System.Windows.Forms.Button genButton;
+        private DataGridView probabilityTable;
+        private Label choiseLabel;
+        private ComboBox tableDropdown;
+        private BindingSource tableData;
+        private BindingSource tableNames;
+        private Button renderButton;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private NumericUpDown mCountBox;
+        private NumericUpDown kCountBox;
+        private NumericUpDown eCountBox;
+        private Label label4;
+        private ComboBox randomDropdown;
+        private BindingSource randomMode;
+        private Button computeButton;
+        private Button saveButton;
+        private Button genButton;
     }
 }
 

@@ -23,6 +23,8 @@ namespace cryptolab1
             dataGrid.Refresh();
 
             Array.ForEach(table.colNames, colname => dataGrid.Columns.Add(colname, colname));
+            foreach (DataGridViewColumn column in dataGrid.Columns)
+                column.Width = 40;
             for (var i = 0; i < table.rowNames.Length; i++)
             {
                 var newRow = new DataGridViewRow();
@@ -76,7 +78,66 @@ namespace cryptolab1
 
         public List<List<string>> GenerateEncodingTable(decimal kCount, decimal mCount, decimal eCount)
         {
+            
             var rows = new List<List<string>>();
+            
+            if (mCount == 6 && eCount == 6)
+            {
+                rows = new List<List<string>>
+                {
+                    new List<string> {"E1", "E5", "E4", "E3", "E2", "E6"},
+                    new List<string> {"E2", "E4", "E3", "E5", "E6", "E1"},
+                    new List<string> {"E4", "E3", "E5", "E6", "E1", "E2"},
+                    new List<string> {"E3", "E2", "E6", "E1", "E5", "E4"},
+                    new List<string> {"E5", "E6", "E1", "E2", "E4", "E3"},
+                    new List<string> {"E6", "E1", "E2", "E4", "E3", "E5"}
+                };
+                
+                return rows.GetRange(0, (int)kCount);
+            }
+
+            if (mCount == 7 && eCount == 7)
+            {
+                rows = new List<List<string>>
+                {
+                    new List<string> {"E4", "E5", "E2", "E6", "E3", "E1", "E7"},
+                    new List<string> {"E1", "E2", "E3", "E7", "E5", "E6", "E4"},
+                    new List<string> {"E6", "E1", "E4", "E3", "E5", "E7", "E2"},
+                    new List<string> {"E2", "E7", "E1", "E6", "E4", "E3", "E5"},
+                    new List<string> {"E4", "E7", "E5", "E3", "E6", "E1", "E2"},
+                    new List<string> {"E7", "E4", "E3", "E5", "E6", "E2", "E1"},
+                    new List<string> {"E5", "E3", "E1", "E2", "E7", "E4", "E6"},
+                    new List<string> {"E7", "E3", "E6", "E2", "E1", "E4", "E5"},
+                    new List<string> {"E5", "E1", "E2", "E4", "E3", "E7", "E6"},
+                    new List<string> {"E3", "E2", "E7", "E5", "E1", "E6", "E4"},
+                    new List<string> {"E6", "E4", "E7", "E1", "E2", "E5", "E3"},
+                    new List<string> {"E1", "E6", "E5", "E4", "E7", "E2", "E3"},
+                    new List<string> {"E3", "E6", "E4", "E7", "E2", "E5", "E1"},
+                    new List<string> {"E2", "E5", "E6", "E1", "E4", "E3", "E7"}
+                };
+
+                return rows.GetRange(0, (int)kCount);
+            }
+
+            if (mCount == 4 && eCount == 5)
+            {
+                rows = new List<List<string>>
+                {
+                    new List<string> {"E2", "E5", "E1", "E4"},
+                    new List<string> {"E4", "E1", "E3", "E2"},
+                    new List<string> {"E3", "E5", "E4", "E1"},
+                    new List<string> {"E1", "E2", "E3", "E5"},
+                    new List<string> {"E3", "E4", "E2", "E5"},
+                    new List<string> {"E5", "E3", "E1", "E2"},
+                    new List<string> {"E5", "E2", "E1", "E4"},
+                    new List<string> {"E3", "E5", "E2", "E1"},
+                    new List<string> {"E5", "E3", "E4", "E1"},
+                    new List<string> {"E2", "E4", "E5", "E3"}
+                };
+
+                return rows.GetRange(0, (int)kCount);
+            }
+
             for (var i = 0; i < kCount; i++)
             {
                 var eNames = new NameGenerator().GenerateNames("E", (int) eCount).ToArray();

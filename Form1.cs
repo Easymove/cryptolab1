@@ -143,7 +143,7 @@ namespace cryptolab1
             _messageTab = new TableData<double>(new List<string> {"P"}, _messages,
                 new List<List<double>>
                 {
-                    _probGen.GenerateProbabilities((int) mCountBox.Value, randomDropdown.SelectedIndex)
+                    _probGen.GenerateProbabilities((int) mCountBox.Value, 1)
                 });
 
             _keysTab = new TableData<double>(new List<string> {"P"}, _keys,

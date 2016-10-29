@@ -7,7 +7,7 @@ namespace cryptolab1
     {
         public List<string> GenerateNames(string nameBase, int len)
         {
-            var counter = 0;
+            var counter = 1;
             return new List<string>(new string[len]).Select(x =>
             {
                 counter++;
